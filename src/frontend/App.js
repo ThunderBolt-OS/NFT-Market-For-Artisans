@@ -5,7 +5,7 @@ import { ethers } from "ethers"
 import { Spinner } from 'react-bootstrap'
 
 // project files imports
-import { Navigation } from './components';
+import { Navbar } from './components';
 import { Home, Create, MyListedItems, MyPurchases } from './pages';
 import MarketplaceAbi from './contractsData/Marketplace.json'
 import MarketplaceAddress from './contractsData/Marketplace-address.json'
@@ -55,7 +55,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <>
-          <Navigation web3Handler={web3Handler} account={account} />
+          <Navbar web3Handler={web3Handler} account={account} />
         </>
         <div>
           {loading ? (

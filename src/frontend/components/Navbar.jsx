@@ -1,46 +1,96 @@
+import React, { useState } from "react";
 import {
-    Link
-} from "react-router-dom";
-import { Navbar, Nav, Button, Container } from 'react-bootstrap'
-import market from './market.png'
+  AppBar,
+  Tab,
+  Tabs,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+  useTheme,
+  Button,
+} from "@mui/material";
+import ArtTrackTwoToneIcon from "@mui/icons-material/ArtTrackTwoTone";
+import { useNavigate, NavLink } from "react-router-dom";
 
-const Navigation = ({ web3Handler, account }) => {
-    return (
-        <Navbar expand="lg" bg="secondary" variant="dark">
-            <Container>
-                <Navbar.Brand href="/">
-                    <img src={market} width="40" height="40" className="" alt="" />
-                    &nbsp; DApp NFT Marketplace
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/create">Create</Nav.Link>
-                        <Nav.Link as={Link} to="/my-listed-items">My Listed Items</Nav.Link>
-                        <Nav.Link as={Link} to="/my-purchases">My Purchases</Nav.Link>
-                    </Nav>
-                    <Nav>
-                        {account ? (
-                            <Nav.Link
-                                href={`https://etherscan.io/address/${account}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="button nav-button btn-sm mx-4">
-                                <Button variant="outline-light">
-                                    {account.slice(0, 5) + '...' + account.slice(38, 42)}
-                                </Button>
+import Drawercompp from "./Drawer";
 
-                            </Nav.Link>
-                        ) : (
-                            <Button onClick={web3Handler} variant="outline-light">Connect Wallet</Button>
-                        )}
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    )
+const Navbar = ({ web3Handler, account }) => {
+  const [value, setValue] = useState();
+  const theme = useTheme();
+  //   console.log(theme);
+  let navigate = useNavigate();
+  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  //   console.log(isMatch);
 
-}
+  const handleEtherRedirect = () => {
+    window.open(`https://etherscan.io/address/${account}`, "_blank");
+  };
 
-export default Navigation;
+  return (
+    <AppBar sx={{ background: "#063970", position: "relative" }}>
+      <Toolbar>
+        <ArtTrackTwoToneIcon sx={{ transform: "scale(2)" }} />
+        {isMatch ? (
+          <>
+            <Typography sx={{ fontSize: "2rem", paddingLeft: "10%" }}>
+              Artisan Marketplace
+            </Typography>
+            <Drawercompp />
+          </>
+        ) : (
+          <>
+            <Tabs
+              sx={{ marginLeft: "auto" }}
+              indicatorColor="secondary"
+              textColor="inherit"
+              value={value}
+              onChange={(e, value) => setValue(value)}
+            >
+              <Tab
+                label="Home"
+                onClick={() => {
+                  navigate("/");
+                }}
+              />
+              <Tab
+                label="Create"
+                onClick={() => {
+                  navigate("/create");
+                }}
+              />
+              <Tab
+                label="My Listed Items"
+                onClick={() => {
+                  navigate("/my-listed-items");
+                }}
+              />
+              <Tab
+                label="My Purchases"
+                onClick={() => {
+                  navigate("/my-purchases");
+                }}
+              />
+            </Tabs>
+
+            {account ? (
+              <Button
+                variant="contained"
+                onClick={() => {
+                  handleEtherRedirect();
+                }}
+              >
+                {account.slice(0, 5) + "..." + account.slice(38, 42)}
+              </Button>
+            ) : (
+              <Button variant="contained" onClick={web3Handler}>
+                Connect Wallet
+              </Button>
+            )}
+          </>
+        )}
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+export default Navbar;
