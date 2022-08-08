@@ -224,9 +224,9 @@ cd src/backend
 
 See the [open issues](https://github.com/ThunderBolt-OS/NFT-Marketplace-for-Artisan/issues) for a list of proposed features (and known issues).
 
-- [Top Feature Requests](https://github.com/ThunderBolt-OS/NFT-Marketplace-for-Artisan/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
-- [Top Bugs](https://github.com/ThunderBolt-OS/NFT-Marketplace-for-Artisan/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
-- [Newest Bugs](https://github.com/ThunderBolt-OS/NFT-Marketplace-for-Artisan/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
+- [Top Feature Requests](https://github.com/ThunderBolt-OS/NFT-Market-For-Artisans/blob/main/.github/ISSUE_TEMPLATE/02_FEATURE_REQUEST.md) (Add your votes using the 👍 reaction)
+- [Top Bugs](https://github.com/ThunderBolt-OS/NFT-Market-For-Artisans/blob/main/.github/ISSUE_TEMPLATE/01_BUG_REPORT.md) (Add your votes using the 👍 reaction)
+- [Newest Bugs](https://github.com/ThunderBolt-OS/NFT-Market-For-Artisans/blob/main/.github/ISSUE_TEMPLATE/01_BUG_REPORT.md)
 
 
 Reach out to the maintainer at one of the following places:
@@ -238,7 +238,7 @@ Reach out to the maintainer at one of the following places:
 
 First off, thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are **greatly appreciated**.
 
-Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you for being involved!
+Please read [our contribution guidelines](https://github.com/ThunderBolt-OS/NFT-Market-For-Artisans/blob/main/docs/CONTRIBUTING.md), and thank you for being involved!
 
 ## Authors & contributors
 
@@ -251,7 +251,7 @@ For a full list of all authors and contributors, see [the contributors page](htt
 NFT-Martkeplace-for-Artisan follows good practices of security, but 100% security cannot be assured.
 NFT-Martkeplace-for-Artisan is provided **"as is"** without any **warranty**. Use at your own risk.
 
-_For more information and to report security issues, please refer to our [security documentation](docs/SECURITY.md)._
+_For more information and to report security issues, please refer to our [security documentation](https://github.com/ThunderBolt-OS/NFT-Market-For-Artisans/blob/main/docs/SECURITY.md)._
 
 ## License
 
